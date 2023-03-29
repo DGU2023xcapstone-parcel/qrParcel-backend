@@ -1,0 +1,2 @@
+package com.capstone.project.config.web;public class WebMvcConfig {
+}
