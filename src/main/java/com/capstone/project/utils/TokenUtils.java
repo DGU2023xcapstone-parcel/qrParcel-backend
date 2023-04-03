@@ -18,7 +18,7 @@ import java.util.Date;
 @RequiredArgsConstructor
 @Log4j2
 @Component
-@PropertySource("classpath:applicatuon-lg.yml")
+@PropertySource("classpath:application-lg.yml")
 public class TokenUtils {
 
     private static String secretKey;
