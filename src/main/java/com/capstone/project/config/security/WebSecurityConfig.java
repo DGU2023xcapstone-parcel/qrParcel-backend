@@ -4,6 +4,7 @@ import com.capstone.project.login.authentication.CustomAuthenticationFilter;
 import com.capstone.project.login.authentication.CustomAuthenticationProvider;
 import com.capstone.project.login.handler.CustomFormLoginSuccessHandler;
 import com.capstone.project.service.MemberDetailsServiceImpl;
+import com.capstone.project.utils.RedisUtils;
 import com.capstone.project.utils.TokenUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,7 @@ import org.springframework.web.filter.CorsFilter;
 public class WebSecurityConfig {
 
     private final TokenUtils tokenUtils;
+    private final RedisUtils redisUtils;
     private final UserDetailsService userDetailsService;
     private final AuthenticationConfiguration authenticationConfiguration;
     private final ObjectMapper objectMapper;
@@ -79,7 +81,7 @@ public class WebSecurityConfig {
 
     @Bean
     public CustomFormLoginSuccessHandler customFormLoginSuccessHandler(){
-        return new CustomFormLoginSuccessHandler(tokenUtils, objectMapper);
+        return new CustomFormLoginSuccessHandler(tokenUtils, objectMapper, redisUtils);
     }
 
     @Bean
