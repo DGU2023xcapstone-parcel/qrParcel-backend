@@ -6,6 +6,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Builder
@@ -26,6 +28,12 @@ public class Member extends BaseTimeEntity implements Serializable {
 
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
+    private String phoneNumber;
+
+    @OneToMany(mappedBy = "member")
+    private List<TrackingInfo> parcels = new ArrayList<>();
 
     @Setter
     @Enumerated(EnumType.STRING)
