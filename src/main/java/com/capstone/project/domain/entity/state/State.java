@@ -1,4 +1,4 @@
-package com.capstone.project.domain.entity;
+package com.capstone.project.domain.entity.state;
 
 import lombok.*;
 
@@ -29,5 +29,5 @@ public class FirstState {
 
     @Column(nullable = false)
     private String curState;
-    
+
 }
