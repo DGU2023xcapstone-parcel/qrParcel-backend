@@ -73,7 +73,7 @@ public class WebSecurityConfig {
     @Bean
     public CustomAuthenticationFilter customAuthenticationFilter() throws Exception{
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(authenticationManager());
-        customAuthenticationFilter.setFilterProcessesUrl("/member/signIn");
+        customAuthenticationFilter.setFilterProcessesUrl("/user/signIn");
         customAuthenticationFilter.setAuthenticationSuccessHandler(customFormLoginSuccessHandler());
         customAuthenticationFilter.afterPropertiesSet();
         return customAuthenticationFilter;
