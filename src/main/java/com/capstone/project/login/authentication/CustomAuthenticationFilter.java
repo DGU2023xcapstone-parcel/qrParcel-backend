@@ -27,7 +27,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
         final UsernamePasswordAuthenticationToken authRequest;
 
-
         try{
             final LoginMemberDto loginMemberDto = new ObjectMapper().readValue(request.getInputStream(), LoginMemberDto.class);
             log.info("로그인 요청한 사용자 이메일 : {}", loginMemberDto.getEmail());
